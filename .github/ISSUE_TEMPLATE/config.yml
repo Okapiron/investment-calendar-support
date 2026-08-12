@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: サポート案内
+    url: https://feed-flax-mu.vercel.app/support.html
+    about: 報告前にサポート案内をご確認ください
