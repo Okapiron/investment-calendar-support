@@ -1,0 +1,81 @@
+name: イベント日時の訂正
+description: マクロイベントの不足や日時、状態の誤りを報告します
+title: "[イベント訂正] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        公式発表を確認できる情報をご提供ください。
+        本フォームは予定情報の訂正受付用です。個人情報や売買を促す内容は記載しないでください。
+
+  - type: input
+    id: event_name
+    attributes:
+      label: イベント名
+      placeholder: 例 米国 消費者物価指数
+    validations:
+      required: true
+
+  - type: input
+    id: displayed_datetime
+    attributes:
+      label: アプリに表示されている日時
+      description: タイムゾーンも記載してください。イベント自体がない場合は「未掲載」と入力してください。
+      placeholder: 例 2026-08-12 21:30 JST
+    validations:
+      required: true
+
+  - type: input
+    id: correct_datetime
+    attributes:
+      label: 正しい日時
+      description: タイムゾーンも記載してください。
+      placeholder: 例 2026-08-13 21:30 JST
+    validations:
+      required: true
+
+  - type: dropdown
+    id: correction_type
+    attributes:
+      label: 訂正内容
+      options:
+        - 未掲載
+        - 日付
+        - 時刻
+        - 状態（確定・暫定・推定・中止）
+        - その他
+    validations:
+      required: true
+
+  - type: input
+    id: official_source
+    attributes:
+      label: 公式情報のURL
+      description: 発表機関など、一次情報のページを入力してください。
+      placeholder: https://
+    validations:
+      required: true
+
+  - type: input
+    id: checked_at
+    attributes:
+      label: 公式情報を確認した日
+      placeholder: 例 2026-08-12
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 補足
+      description: 必要な場合のみ記載してください。
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 確認
+      options:
+        - label: 公式機関などの一次情報を確認しました。
+          required: true
+        - label: 売買を促す内容や個人情報を記載していません。
+          required: true
