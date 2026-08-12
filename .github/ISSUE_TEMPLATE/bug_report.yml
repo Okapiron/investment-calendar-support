@@ -1,0 +1,78 @@
+name: 不具合報告
+description: アプリの動作、表示、通知に関する不具合を報告します
+title: "[不具合] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ご報告ありがとうございます。
+        氏名、メールアドレス、口座情報、保有銘柄、取引履歴などの個人情報は記載しないでください。
+
+  - type: input
+    id: app_version
+    attributes:
+      label: アプリのバージョン
+      description: 設定画面などで確認できるバージョンを入力してください。
+      placeholder: 例 1.0
+    validations:
+      required: true
+
+  - type: input
+    id: ios_version
+    attributes:
+      label: iOSのバージョン
+      placeholder: 例 iOS 26.0
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 端末
+      placeholder: 例 iPhone 16
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 発生した問題
+      description: 何が起きたかを具体的に記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: 問題が発生するまでの操作を順番に記載してください。
+      placeholder: |
+        1. アプリを起動
+        2. カレンダーを開く
+        3. 対象日をタップ
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動作
+      description: 本来どのように表示または動作する想定かを記載してください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: スクリーンショット
+      description: 任意です。個人情報が写っていないことを確認して添付してください。
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 確認
+      options:
+        - label: App Storeで利用可能な最新版でも発生することを確認しました。
+          required: true
+        - label: 個人情報、口座情報、保有銘柄、取引履歴を記載していません。
+          required: true
